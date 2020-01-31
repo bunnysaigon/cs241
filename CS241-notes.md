@@ -37,3 +37,4 @@ int function_2(void);
 
 
 ```
+3. A pointer to void may be converted to or from a pointer to any incomplete or object type. A pointer to any incomplete or object type may be converted to a pointer to void and back again; the result shall compare equal to the original pointer.
