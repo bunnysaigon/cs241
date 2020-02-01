@@ -34,7 +34,20 @@ void function_1();
 int function_2(void);
 
 
-
+typedef enum { false, true } bool;
+  // for C don't have bool as data type before C99 :(
+  bool disaster = false;
+  int i, j;
+  for(i=0;i<100;++i)
+  for(j=0;j<100;++j)
+  {
+    if((i + j) >= 150)
+        disaster = true;
+    if(disaster)
+        goto error;
+  }
+  error :
+  printf("Error occurred at i = %d & j = %d.\n", i, j);
 
 ```
 3. A pointer to void may be converted to or from a pointer to any incomplete or object type. A pointer to any incomplete or object type may be converted to a pointer to void and back again; the result shall compare equal to the original pointer.
