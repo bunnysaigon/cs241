@@ -33,7 +33,8 @@ enum days {SUN = 1, MON, TUE, WED, THU, FRI, SAT};
 void function_1();
 int function_2(void);
 
-
+// Use typedef 
+// 1
 typedef enum { false, true } bool;
   // for C don't have bool as data type before C99 :(
   bool disaster = false;
@@ -48,6 +49,43 @@ typedef enum { false, true } bool;
   }
   error :
   printf("Error occurred at i = %d & j = %d.\n", i, j);
+  
+  // 2
+  typedef unsigned char BYTE;
+  typedef unsigned char byte;
+  
+  // 3 struct
+  typedef struct Books {
+    char title[50];
+    char author[50];
+    char subject[100];
+    int book_id;
+  } Book;
+
+   Book book;
+ 
+   strcpy( book.title, "C Programming");
+   strcpy( book.author, "Nuha Ali"); 
+   strcpy( book.subject, "C Programming Tutorial");
+   book.book_id = 6495407;
+   
+   // Pointer
+   int x = 0;
+  printf("%p\n", (void *)&x); // Use & to retrieve the address of a variable
+  // (%p formats an object pointer of type void *)
+  // => Prints some address in memory;
+
+  // Pointers start with * in their declaration
+  int *px, not_a_pointer; // px is a pointer to an int
+  px = &x; // Stores the address of x in px
+  printf("%p\n", (void *)px); // => Prints some address in memory
+  printf("%zu, %zu\n", sizeof(px), sizeof(not_a_pointer));
+  // => Prints "8, 4" on a typical 64-bit system
+
+  
+  
+  
+  
 
 ```
 3. A pointer to void may be converted to or from a pointer to any incomplete or object type. A pointer to any incomplete or object type may be converted to a pointer to void and back again; the result shall compare equal to the original pointer.
